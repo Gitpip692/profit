@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Future Investment Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.25rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      margin-top: 1.5rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    .ad-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Future Investment Calculator</h2>
+
+    <!-- Ad Block 1 -->
+    <div class="ad-container">
+      <script type="text/javascript">
+        atOptions = {
+          'key' : 'a9cb77f634eda66e1c8ca6b389aecbdc',
+          'format' : 'iframe',
+          'height' : 50,
+          'width' : 320,
+          'params' : {}
+        };
+      </script>
+      <script type="text/javascript" src="//www.highperformanceformat.com/a9cb77f634eda66e1c8ca6b389aecbdc/invoke.js"></script>
+    </div>
+
+    <label for="initial">Initial Investment ($):</label>
+    <input type="number" id="initial" placeholder="e.g. 1000" />
+
+    <label for="monthly">Monthly Contribution ($):</label>
+    <input type="number" id="monthly" placeholder="e.g. 100" />
+
+    <label for="rate">Annual Interest Rate (%):</label>
+    <input type="number" id="rate" placeholder="e.g. 5" step="0.01" />
+
+    <label for="years">Investment Duration (years):</label>
+    <input type="number" id="years" placeholder="e.g. 10" />
+
+    <button onclick="calculateInvestment()">Calculate</button>
+
+    <div class="result" id="result"></div>
+
+    <!-- Ad Block 2 -->
+    <div class="ad-container">
+      <script async="async" data-cfasync="false" src="//pl26885666.profitableratecpm.com/d47065c49bb4b9777c30392ac6a29ca7/invoke.js"></script>
+      <div id="container-d47065c49bb4b9777c30392ac6a29ca7"></div>
+    </div>
+
+  </div>
+
+  <script>
+    function calculateInvestment() {
+      const initial = parseFloat(document.getElementById("initial").value) || 0;
+      const monthly = parseFloat(document.getElementById("monthly").value) || 0;
+      const rate = parseFloat(document.getElementById("rate").value) || 0;
+      const years = parseFloat(document.getElementById("years").value) || 0;
+
+      const months = years * 12;
+      const monthlyRate = rate / 100 / 12;
+
+      let futureValue = initial * Math.pow(1 + monthlyRate, months);
+      for (let i = 1; i <= months; i++) {
+        futureValue += monthly * Math.pow(1 + monthlyRate, months - i);
+      }
+
+      document.getElementById("result").innerHTML =
+        "Future Value: <strong>$" + futureValue.toFixed(2) + "</strong>";
+    }
+  </script>
+</body>
+</html>
